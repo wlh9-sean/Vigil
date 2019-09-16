@@ -1,11 +1,21 @@
 import React from 'react';
+import Router from './routes/main.routes'
+import './App.css'
+import 'styled-components'
+import Admin from './Components/Admin/Admin'
+import Nav from './Components/NavBar/NavBar'
 
 function App() {
   return (
-    <div className="App">
-      <h1>App</h1>
+    <div>
+      <Nav />
+      <Admin />
+      {Router}
     </div>
   );
 }
 
 export default App;
+
+
+
