@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
-// import {Switch} from '@material-ui/core'
+import axios from 'axios'
+import {connect} from 'react-redux'
+import {logoutUser} from './../../redux/reducers/adminReducer'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
-export default class NavBar extends Component {
+class NavBar extends Component {
+
+    logout = () => {
+        axios.get('/auth/logout')
+        .then(() => {
+            this.props.logoutUser()
+        })
+    }
+
+
     render() {
         return (
             <div>
@@ -11,9 +22,13 @@ export default class NavBar extends Component {
                 <Link to='/'>
                     <h1>Title</h1>
                 </Link>
-                <Link to='/admin/login'>
-                    <button>Sign In</button>
-                </Link>
+                {!this.props.id ?
+                    (<Link to='/admin/login'>
+                        <button>Sign In</button>
+                    </Link>)
+                :
+                (<button>Logout</button>)
+                }
                     <Ul>
                         <li>Register</li>
                         <li>Resources</li>
@@ -24,6 +39,12 @@ export default class NavBar extends Component {
         )
     }
 }
+
+const mapStateToProps = reduxState => {
+    return reduxState
+}
+
+export default connect(mapStateToProps, {logoutUser})(NavBar)
 
 
 // Styled Components

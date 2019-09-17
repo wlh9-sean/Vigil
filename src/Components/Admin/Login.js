@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {updateUser} from './../../redux/reducers/adminReducer'
+import {updateUser, logoutUser} from './../../redux/reducers/adminReducer'
 
 class Login extends Component {
     constructor(){
@@ -28,10 +28,16 @@ class Login extends Component {
               this.props.updateUser(res.data)
               this.props.history.push('/')
             })
+            .catch((error) => {
+                console.log(error)
+            })
     }
+
+    
 
     render() {
         return (
+
             <div>
                 <label>Email</label>
                <input type='email'
@@ -50,4 +56,4 @@ class Login extends Component {
     }
 }
 
-export default connect(null, {updateUser})(Login)
+export default connect(null, {updateUser, logoutUser})(Login)
