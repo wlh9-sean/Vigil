@@ -15,7 +15,7 @@ const register = async (req, res) => {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
 
-        let response = await db.auth.create_admin({first_name:firstName, last_name: lastName, email, hash, is_admin: isAdmin})
+        let response = await db.auth.create_admin({first_name:firstName, last_name: lastName, email, hash, is_admin: true})
         let newUser= response[0]
 
         delete newUser.password
@@ -29,7 +29,7 @@ const register = async (req, res) => {
     }
 }
 
-const login = async(req, res) => {
+const login = async(req, res) => { 
     try {
         const db = req.app.get('db')
         const {email, password} = req.body

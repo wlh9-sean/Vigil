@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {updateUser} from './../../redux/reducers/adminReducer'
 import axios from 'axios'
 import styled from 'styled-components'
 
-export default class Admin extends Component {
+class Admin extends Component {
     constructor(){
         super()
 
@@ -10,9 +12,7 @@ export default class Admin extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            password: '',
-            isAdmin: false,
-            user: {}
+            password: ''
         }
     }
 
@@ -29,17 +29,17 @@ export default class Admin extends Component {
     }
 
     register = () => {
-        const {firstName, lastName, email, password, isAdmin, user} = this.state
-        axios.post('/auth/register', {firstName, lastName, email, password, isAdmin, user})
+        const {firstName, lastName, email, password, isAdmin} = this.state
+        axios.post('/auth/register', {firstName, lastName, email, password, isAdmin})
         .then(user => {
             this.setState({
                 firstName: '',
                 lastName: '',
                 email: '',
-                password: '',
-                isAdmin: true
+                password: ''
             })
-            this.updateUser(user.data)
+            this.props.updateUser(user.data)
+            this.props.history.push('/')
         }).catch(err => console.log(err))
     }
 
@@ -81,6 +81,8 @@ export default class Admin extends Component {
     }
 }
 
+export default connect(null, {updateUser}) (Admin)
+
 
 // Styled Components
 
@@ -88,7 +90,8 @@ const Div1 = styled.div`
     height: 500px;
     width: 50%;
     background: #F6F6F6;
-    margin: 10px;
+    margin-top: 50px;
+    margin-left: 270px;
     display: flex;
 
 `

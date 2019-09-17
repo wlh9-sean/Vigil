@@ -28,5 +28,6 @@ massive(CONNECTION_STRING).then(db => {
 }).catch(error => console.log(chalk.bgRed('Connection failed', error)))
 
 app.post('/auth/register', authCtrl.register)
+app.post('/auth/login', authCtrl.login)
 
 app.listen(SERVER_PORT, () => console.log(chalk.cyan(`Serving on port ${SERVER_PORT} 🚀`)))

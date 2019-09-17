@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 // import {Switch} from '@material-ui/core'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
 export default class NavBar extends Component {
     render() {
         return (
             <div>
                 <Nav>
-                <h1>Title</h1>
+                <Link to='/'>
+                    <h1>Title</h1>
+                </Link>
+                <Link to='/admin/login'>
+                    <button>Sign In</button>
+                </Link>
                     <Ul>
                         <li>Register</li>
                         <li>Resources</li>
@@ -28,9 +34,18 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    @media(max-width: 768px){
+        font-size: 20px;
+        display: flex
+        Ul {
+            display: none;
+        }
+    }
 `
 
 const Ul = styled.ul`
     display: flex;
     justify-content: space-evenly;
 `
+
