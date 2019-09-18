@@ -6,6 +6,8 @@ const cors = require('cors')
 const chalk = require('chalk')
 
 const authCtrl = require('./controllers/auth_ctrl')
+const profCtrl = require('./controllers/prof_ctrl')
+const authMidd = require('./middleware/auth_middlware')
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
@@ -27,8 +29,14 @@ massive(CONNECTION_STRING).then(db => {
     console.log(chalk.blue('Database Connected 🦄'))
 }).catch(error => console.log(chalk.bgRed('Connection failed', error)))
 
+// Auth Endpoints
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', authCtrl.logout)
+
+// Profile Endpoints POST create PUT update GET read DELETE delete
+app.post('/api/profile/create', authMidd.authenticateUser, profCtrl.create)
+app.get('/api/profiles', profCtrl.getProfiles)
+
 
 app.listen(SERVER_PORT, () => console.log(chalk.cyan(`Serving on port ${SERVER_PORT} 🚀`)))

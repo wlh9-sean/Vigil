@@ -45,7 +45,6 @@ class Admin extends Component {
 
 
     render() {
-        console.log(this.state)
         return (
             <Div1>
                 <Div2>

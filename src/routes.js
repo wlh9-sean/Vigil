@@ -19,7 +19,7 @@ export default (
 
         {/* Profile Routes */}
         <Route path='/api/profile/create' component={CreateProfile} />
-        <Route path='/api/profile' />
+        <Route path='/api/profile/:id' />
         <Route path='/api/profiles' />
         <Route path='/api/profile/comment' />
 

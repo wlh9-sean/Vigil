@@ -12,9 +12,15 @@ function Home(props) {
                 <p>Occaecat magna deserunt quis proident velit minim cillum reprehenderit fugiat. Sit irure elit labore dolore ullamco enim ullamco nulla. Ut exercitation quis cupidatat ipsum cillum et.</p>
             </div>
 
-            <Link to='/admin/register'>
-                <button>Register A Profile</button>
-            </Link>
+            {!props.id ?
+                (<Link to='/admin/register'>
+                    <button>Register as an Admin</button>
+                </Link>)
+            :
+                (<Link to='/api/profile/create'>
+                    <button>Create a Profile</button>
+                </Link>)
+            }
 
             <Link to='/api/resources'>
                 <button>Resources</button>

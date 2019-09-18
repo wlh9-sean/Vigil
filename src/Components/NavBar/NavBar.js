@@ -3,7 +3,7 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {logoutUser} from './../../redux/reducers/adminReducer'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 
 class NavBar extends Component {
 
@@ -11,6 +11,7 @@ class NavBar extends Component {
         axios.get('/auth/logout')
         .then(() => {
             this.props.logoutUser()
+            // this.props.history.push('/')
         })
     }
 
@@ -27,7 +28,7 @@ class NavBar extends Component {
                         <button>Sign In</button>
                     </Link>)
                 :
-                (<button>Logout</button>)
+                (<button onClick={this.logout}>Logout</button>)
                 }
                     <Ul>
                         <li>Register</li>

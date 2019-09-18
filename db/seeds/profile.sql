@@ -5,5 +5,5 @@ CREATE TABLE profile (
     birthday INTEGER,
     passing_date INTEGER,
     comments TEXT,
-    profile_id INTEGER REFERENCES admin(id)
+    admin_id INTEGER REFERENCES admin(id)
 )

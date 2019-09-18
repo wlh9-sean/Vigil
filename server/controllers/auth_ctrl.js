@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs')
 
 const register = async (req, res) => {
     try {
-        const {firstName, lastName, email, password, isAdmin} = req.body
+        const {firstName, lastName, email, password} = req.body
         const db = req.app.get('db')
 
         let users = await db.auth.get_admin(email)
