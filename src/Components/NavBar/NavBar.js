@@ -19,23 +19,29 @@ class NavBar extends Component {
     render() {
         return (
             <div>
-                <Nav>
-                <Link to='/'>
-                    <h1>Title</h1>
-                </Link>
-                {!this.props.id ?
-                    (<Link to='/admin/login'>
-                        <button>Sign In</button>
-                    </Link>)
-                :
-                (<button onClick={this.logout}>Logout</button>)
-                }
-                    <Ul>
-                        <li>Register</li>
-                        <li>Resources</li>
-                        <li>About Us</li>
-                    </Ul>
-                </Nav>
+                <div>
+                    <Nav>
+                    <Link to='/'>
+                        <h1>Title</h1>
+                    </Link>
+                    {!this.props.id ?
+                        (<Link to='/admin/login'>
+                            <button>Sign In</button>
+                        </Link>)
+                    :
+                    (<button onClick={this.logout}>Logout</button>)
+                    }
+
+                    
+                        <Ul>
+                            <li>Register</li>
+                            <li>Resources</li>
+                            <li>About Us</li>
+                        </Ul>
+                    
+                    </Nav>
+                </div>
+
             </div>
         )
     }
@@ -49,6 +55,13 @@ export default connect(mapStateToProps, {logoutUser})(NavBar)
 
 
 // Styled Components
+const mobileDiv = styled.div`
+    @media(max-width: 768px){
+        
+    }
+`
+
+
 const Nav = styled.nav`
     height: 10vh;
     width: 100vw;
@@ -67,6 +80,7 @@ const Nav = styled.nav`
 `
 
 const Ul = styled.ul`
+    width: 300px;
     display: flex;
     justify-content: space-evenly;
 `
