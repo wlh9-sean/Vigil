@@ -3,9 +3,16 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {logoutUser} from './../../redux/reducers/adminReducer'
 import styled from 'styled-components'
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 class NavBar extends Component {
+    constructor(){
+        super()
+
+        this.state = {
+            menu: false
+        }
+    }
 
     logout = () => {
         axios.get('/auth/logout')
@@ -15,11 +22,18 @@ class NavBar extends Component {
         })
     }
 
+    slide = () => {
+        this.setState({
+            menu: !this.state.menu
+        })
+    }
+
 
     render() {
         return (
             <div>
-                <div>
+                
+                    {/* Navbar */}
                     <Nav>
                     <Link to='/'>
                         <h1>Title</h1>
@@ -40,8 +54,14 @@ class NavBar extends Component {
                         </Ul>
                     
                     </Nav>
-                </div>
-
+                
+                    {/* <MobileDiv>
+                        <Ul>
+                            <li>Register</li>
+                            <li>Resources</li>
+                            <li>About Us</li>  
+                        </Ul>
+                    </MobileDiv> */}
             </div>
         )
     }
@@ -55,7 +75,7 @@ export default connect(mapStateToProps, {logoutUser})(NavBar)
 
 
 // Styled Components
-const mobileDiv = styled.div`
+const MobileDiv = styled.div`
     @media(max-width: 768px){
         
     }
@@ -74,7 +94,7 @@ const Nav = styled.nav`
         font-size: 20px;
         display: flex
         Ul {
-            display: none;
+            right: -80px;
         }
     }
 `

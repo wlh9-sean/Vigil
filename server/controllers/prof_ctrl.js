@@ -27,8 +27,17 @@ const getIndivialProfile = (req, res) => {
 
 }
 
+deleteProfile = (req, res) => {
+    const db = req.app.get('db')
+    db.profile.delete_profile(req.params.id, req.query.profile)
+    .then(() => {
+        res.status(200).send('Profile successfully deleted')
+    })
+}
+
 module.exports = {
     create,
     getProfiles,
-    getIndivialProfile
+    getIndivialProfile,
+    deleteProfile
 }

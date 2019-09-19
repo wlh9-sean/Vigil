@@ -22,12 +22,6 @@ class Admin extends Component {
         })
     }
 
-    updateUser = (user) => {
-        this.setState({
-            user
-        })
-    }
-
     register = () => {
         const {firstName, lastName, email, password, isAdmin} = this.state
         axios.post('/auth/register', {firstName, lastName, email, password, isAdmin})
