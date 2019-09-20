@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
+import {connect} from 'react-redux'
 
-export default class DisplayProfile extends Component {
+class DisplayProfile extends Component {
     constructor(){
         super()
 
@@ -25,16 +27,40 @@ export default class DisplayProfile extends Component {
         }).catch(err => console.log(err))
     }
 
+    routeProfile = () => {
+        this.props.history.push(`/profile/edit/${this.props.match.params.id}`)
+    }
+
     render() {
        const {profile} = this.state
         return (
             <div>
-                {profile.first_name}
-                {profile.last_name}
-                {profile.birthday}
-                {profile.passing_date}
-                <button onClick={id => this.deleteProfile(id)}>Delete Profile</button>
+                {!this.props.id ? 
+                <>
+                    {profile.first_name}
+                    {profile.last_name}
+                    {profile.birthday}
+                    {profile.passing_date}
+                </>
+                :
+                <>
+                    {profile.first_name}
+                    {profile.last_name}
+                    {profile.birthday}
+                    {profile.passing_date}
+                    
+                    <button onClick={this.routeProfile}>Edit Profile</button>
+                    <button onClick={() => this.deleteProfile(profile.id)}>Delete Profile</button>
+                </>
+            }
+                
             </div>
         )
     }
 }
+
+const mapStateToProps = reduxState => {
+    return reduxState
+}
+
+export default connect(mapStateToProps)(DisplayProfile)

@@ -2,6 +2,6 @@ UPDATE profile
 set 
     first_name = ${first_name},
     last_name = ${last_name},
-    birthday = ${birthday},
-    passing_date = ${passing_date}
+    birthday = ${stringBirthday},
+    passing_date = ${stringPassing}
 WHERE id = ${id}

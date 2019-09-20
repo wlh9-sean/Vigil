@@ -50,11 +50,13 @@ updateProfile = (req, res) => {
     const {id} = req.params
     const admin_id = req.session.user.id
     const {first_name, last_name, birthday, passing_date} = req.body
+    const stringBirthday = birthday.toString()
+    const stringPassing = passing_date.toString()
 
-    db.profile.edit_profile({id, admin_id, first_name, last_name, birthday, passing_date})
+    db.profile.edit_profile({first_name, last_name, stringBirthday, stringPassing, id})
     .then(() => {
         res.status(200).send('Profile Updated')
-    })
+    }).catch(err => console.log(err))
 }
 
 module.exports = {

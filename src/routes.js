@@ -8,6 +8,7 @@ import Resources from './Components/Resources/Resources'
 import CreateProfile from './Components/Profile/CreateProfile'
 import GetProfiles from './Components/Profile/GetProfiles'
 import DisplayProfile from './Components/Profile/DisplayProfile'
+import EditProfile from './Components/Profile/EditProfile'
 
 export default (
     <Switch>
@@ -24,6 +25,7 @@ export default (
         <Route path='/api/profile/:id' component={DisplayProfile} />
         <Route path='/api/profiles' component={GetProfiles} />
         <Route path='/api/profile/comment' />
+        <Route path ='/profile/edit/:id' component={EditProfile} />
 
     </Switch>
 )
