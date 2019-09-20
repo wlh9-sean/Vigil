@@ -37,8 +37,9 @@ app.get('/auth/logout', authCtrl.logout)
 // Profile Endpoints POST create PUT update GET read DELETE delete
 app.post('/api/profile/create', authMidd.authenticateUser, profCtrl.create)
 app.get('/api/profiles', profCtrl.getProfiles)
-app.get('/api/profile/:id')
+app.get('/api/profile/:id', profCtrl.getIndividualProfile)
 app.delete('/api/profile/:id', profCtrl.deleteProfile)
+app.put('/api/profile/:id', profCtrl.updateProfile)
 
 
 app.listen(SERVER_PORT, () => console.log(chalk.cyan(`Serving on port ${SERVER_PORT} 🚀`)))

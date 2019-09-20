@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
+
 
 export default class GetProfiles extends Component {
     constructor(){
@@ -19,25 +21,22 @@ export default class GetProfiles extends Component {
         })
     }
 
-    deleteProfile = () => {
-        
-    }
+    
 
     render() {
         const mappedProfiles = this.state.profile.map((profile) => {
             return(
-                <Div key={profile.id}>
-                    <div>{profile.first_name}</div>
-                    <div>{profile.last_name}</div>
-                    <div>{profile.birthday}</div>
-                    <div>{profile.passing_date}</div>
-                    <button>Delete Profile</button>
-                </Div>
+                <Link to={`/api/profile/${profile.id}`}>
+                    <Div>
+                        <div>{profile.first_name}</div>
+                        <div>{profile.last_name}</div>
+                    </Div>
+                </Link>
             )
         })
         return (
             <div>
-                <h1>{mappedProfiles}</h1>
+                {mappedProfiles}
             </div>
         )
     }

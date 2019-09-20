@@ -36,12 +36,11 @@ export default class CreateProfile extends Component {
                 birthday: '',
                 passing_date: ''
             })
-            this.props.history.push('/')
+            this.props.history.push('/api/profiles')
         }).catch(err => console.log(err)) 
     }
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <div>
