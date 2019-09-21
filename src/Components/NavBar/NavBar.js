@@ -55,13 +55,7 @@ class NavBar extends Component {
                     
                     </Nav>
                 
-                    {/* <MobileDiv>
-                        <Ul>
-                            <li>Register</li>
-                            <li>Resources</li>
-                            <li>About Us</li>  
-                        </Ul>
-                    </MobileDiv> */}
+                    
             </div>
         )
     }
@@ -75,14 +69,17 @@ export default connect(mapStateToProps, {logoutUser})(NavBar)
 
 
 // Styled Components
-const MobileDiv = styled.div`
-    @media(max-width: 768px){
-        
-    }
-`
+
 
 
 const Nav = styled.nav`
+@media(max-width: 768px){
+    font-size: 20px;
+    display: flex
+    Ul {
+        right: -80px;
+    }
+}
     height: 10vh;
     width: 100vw;
     background: #F6F6F6;
@@ -90,13 +87,6 @@ const Nav = styled.nav`
     align-items: center;
     justify-content: space-around;
 
-    @media(max-width: 768px){
-        font-size: 20px;
-        display: flex
-        Ul {
-            right: -80px;
-        }
-    }
 `
 
 const Ul = styled.ul`
