@@ -25,7 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background: #E7E9F0;
+	background: #F6F6F6;
 }
 ol, ul {
 	list-style: none;
@@ -44,4 +44,5 @@ table {
 }
 .App {
 	font-family: 'Be Vietnam', sans-serif;
+	display: flex;
 }

@@ -1,0 +1,45 @@
+.navbar {
+    height: 100vh;
+    width: 15vw;
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.title {
+    text-decoration: none;
+    margin: 15px;
+    font-size: 30px;
+}
+
+.button {
+    margin: 15px;
+    padding: 4px 30px;
+    border: none;
+    font-size: 15px;
+    
+}
+
+.button:hover {
+    background-color: #E7E9F0;
+}
+
+.list {
+    margin: 15px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+
+.listItem {
+    margin: 20px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+}

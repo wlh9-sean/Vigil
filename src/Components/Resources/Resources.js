@@ -45,18 +45,16 @@ export default function Resources() {
 // Styled Components
 
 const ParentDiv = styled.div`
-@media(max-width: 768){
-
-}
 display: flex;
 flex-direction: column;
 align-items: center;
-`
 
-const ChildDiv = styled.div`
 @media(max-width: 768){
 
 }
+`
+
+const ChildDiv = styled.div`
 
 background: #F6F6F6;
 height: 25vh;
@@ -65,6 +63,9 @@ margin: 10px;
 display: flex;
 flex-direction: column;
 
+@media(max-width: 768){
+
+}
 
 
 `
