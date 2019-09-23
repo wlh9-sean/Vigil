@@ -1,19 +1,28 @@
-.navbar {
+@media(min-width: 768px) {
+
+    .mobileView {
+        display: none;
+    }
+
+/* Desktop View */
+
+.navbarDesktop {
     height: 100vh;
     width: 15vw;
     background: #F6F6F6;
     display: flex;
     flex-direction: column;
+    position: fixed;
     
 }
 
-.title {
+.titleDesktop {
     text-decoration: none;
     margin: 15px;
     font-size: 30px;
 }
 
-.button {
+.buttonDesktop {
     margin: 15px;
     padding: 4px 30px;
     border: none;
@@ -21,25 +30,32 @@
     
 }
 
-.button:hover {
+.buttonDesktop:hover {
     background-color: #E7E9F0;
 }
 
-.list {
+.listDesktop {
     margin: 15px;
 }
 
-.link {
+.linkDesktop {
     text-decoration: none;
     color: black;
 }
 
 
-.listItem {
+.listItemDesktop {
     margin: 20px;
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
+}
 
+@media(max-width: 768px){
+
+    /* Mobile View */
+    
+    .desktopView {
+        display: none
+    }
 }

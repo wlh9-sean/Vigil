@@ -8,26 +8,26 @@ function Home(props) {
     return (
         <div className='parentDiv'>
             <div className='photoDiv'>
-                <img className='sunPhoto' src='https://i.pinimg.com/originals/be/56/ff/be56ff00ba3d8025436fb5f953935749.jpg' />
+                <img className='sunPhoto' src='https://i.pinimg.com/originals/be/56/ff/be56ff00ba3d8025436fb5f953935749.jpg' alt='Sun Rays' />
             </div>
 
             <div className='introBox'>
-                <h1>About Us</h1>
+                <h1 className='about'>About Us</h1>
                 <p>Occaecat magna deserunt quis proident velit minim cillum reprehenderit fugiat. Sit irure elit labore dolore ullamco enim ullamco nulla. Ut exercitation quis cupidatat ipsum cillum et.</p>
             </div>
-
+            
             {!props.id ?
                 (<Link to='/admin/register'>
-                    <button>Register as an Admin</button>
+                    <button className='button'>Register as an Admin</button>
                 </Link>)
             :
                 (<Link to='/api/profile/create'>
-                    <button>Create a Profile</button>
+                    <button className='button'>Create a Profile</button>
                 </Link>)
             }
 
             <Link to='/api/resources'>
-                <button>Resources</button>
+                <button className='button'>Resources</button>
             </Link>
         </div>
     )

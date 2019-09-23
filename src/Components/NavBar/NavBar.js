@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import {logoutUser} from './../../redux/reducers/adminReducer'
 // import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import icon from './menu.svg'
 
 
 class NavBar extends Component {
@@ -34,37 +35,59 @@ class NavBar extends Component {
     render() {
         return (
             <div className='navdiv'>
-                
-
-                    {/* Navbar */}
-                    <nav className='navbar'>
-                    <Link to='/' className='link'>
-                        <h1 className='title'>Title</h1>
+               <div className='desktopView'>
+                    {/* Navbar Desktop View*/}
+                    <nav className='navbarDesktop'>
+                    <Link to='/' className='linkDesktop'>
+                        <h1 className='titleDesktop'>Vigil Light</h1>
                     </Link>
                     
-                        <ul className='list'>
-                            <Link to='/admin/register' className='link'>
-                                <li className='listItem'>Register</li>
+                        <ul className='listDesktop'>
+                            <Link to='/admin/register' className='linkDesktop'>
+                                <li className='listItemDesktop'>Register</li>
                             </Link>
 
-                            <Link to='/api/resources' className='link'>
-                                <li className='listItem'>Resources</li>
+                            <Link to='/api/resources' className='linkDesktop'>
+                                <li className='listItemDesktop'>Resources</li>
                             </Link>
 
-                            <Link className='link'>
-                                <li className='listItem'>About Us</li>
+                            <Link className='linkDesktop'>
+                                <li className='listItemDesktop'>About Us</li>
                             </Link>
                         </ul>
                     
                     {!this.props.id ?
                         (<Link to='/admin/login'>
-                            <button className='button'>Sign In</button>
+                            <button className='buttonDesktop'>Sign In</button>
                         </Link>)
                     :
-                    (<button className='button' onClick={this.logout}>Logout</button>)
+                    (<button className='buttonDesktop' onClick={this.logout}>Logout</button>)
                     }
                     </nav>
                 
+                   
+                </div> 
+
+                {/* Navbar Mobile View */}
+                {!this.state.menu ? 
+                (
+                    <div className='mobileView'>
+                        <img src={icon} onClick={this.slide}/>
+                    </div>
+                )
+                :
+                (
+                    <div>
+                        <nav className='navbarMobile'>
+                            <Link to='/' className='linkMobile'>
+
+                            </Link>
+
+                        </nav>
+                    </div>
+                )
+                }
+
                     
             </div>
         )
