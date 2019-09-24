@@ -6,6 +6,7 @@ import {logoutUser} from './../../redux/reducers/adminReducer'
 // import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import icon from './menu.svg'
+import arrow from './24px.svg'
 
 
 class NavBar extends Component {
@@ -61,7 +62,7 @@ class NavBar extends Component {
                             <button className='buttonDesktop'>Sign In</button>
                         </Link>)
                     :
-                    (<button className='buttonDesktop' onClick={this.logout}>Logout</button>)
+                        (<button className='buttonDesktop' onClick={this.logout}>Logout</button>)
                     }
                     </nav>
                 
@@ -72,16 +73,39 @@ class NavBar extends Component {
                 {!this.state.menu ? 
                 (
                     <div className='mobileView'>
-                        <img src={icon} onClick={this.slide}/>
+                        <img src={icon} onClick={this.slide} alt='' className='hamburger'/>
                     </div>
                 )
                 :
                 (
                     <div>
                         <nav className='navbarMobile'>
+                            <img src={arrow} onClick={this.slide} alt='' />
                             <Link to='/' className='linkMobile'>
-
+                                <h1 className='titleMobile'>Vigil Light</h1>
                             </Link>
+
+                            <ul className='listMobile'>
+                                <Link>
+                                    <li>Register</li>
+                                </Link>
+
+                                <Link>
+                                    <li>Resources</li>
+                                </Link>
+
+                                <Link>
+                                    <li>About Us</li>
+                                </Link>
+                            </ul>
+
+                            {!this.props.id ?
+                        (<Link to='/admin/login'>
+                            <button className='buttonMobile'>Sign In</button>
+                        </Link>)
+                    :
+                        (<button className='buttonMobile' onClick={this.logout}>Logout</button>)
+                    }
 
                         </nav>
                     </div>

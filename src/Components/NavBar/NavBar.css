@@ -54,8 +54,21 @@
 @media(max-width: 768px){
 
     /* Mobile View */
-    
+
     .desktopView {
         display: none
+    }
+
+    .hamburger {
+        height: 30px;
+        margin: 10px;
+    }
+
+    .navbarMobile {
+        height: 100vh;
+        width: 100%;
+        background: #F6F6F6;
+        z-index: 1000;
+        transition: .5s;
     }
 }
