@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
+import './Profile.css'
+
 
 class DisplayProfile extends Component {
     constructor(){
@@ -33,23 +35,54 @@ class DisplayProfile extends Component {
     render() {
        const {profile} = this.state
         return (
-            <div>
+            <div className='profileContainer'>
                 {!this.props.id ? 
                 <>
-                    {profile.first_name}
-                    {profile.last_name}
-                    {profile.birthday}
-                    {profile.passing_date}
+                <div className='individualProfile'>
+                    <div>
+                        <img src={profile.img} className='photo' alt=''/>
+                    </div>
+
+                    <div className='infoStyling'>
+                        <div className='nameStyling'>
+                            <p>{profile.first_name} {profile.last_name}</p>
+                        </div>
+
+                        <div className='birthdayStyling'>
+                            {profile.birthday}
+                        </div>
+
+                        <div className='passingDateStyling'>
+                            {profile.passing_date}
+                        </div>
+
+                    </div>
+                </div>
                 </>
                 :
                 <>
-                    {profile.first_name}
-                    {profile.last_name}
-                    {profile.birthday}
-                    {profile.passing_date}
+                <div className='individualProfile'>
+                    <div>
+                        <img src={profile.img} className='photo' alt=''/>
+                    </div>
+
+                    <div className='infoStyling'>
+                        <div className='nameStyling'>
+                            <p>{profile.first_name} {profile.last_name}</p>
+                        </div>
+
+                        <div className='birthdayStyling'>
+                            {profile.birthday}
+                        </div>
+
+                        <div className='passingDateStyling'>
+                            {profile.passing_date}
+                        </div>
+                    </div>
+                </div>
                     
-                    <button onClick={this.routeProfile}>Edit Profile</button>
-                    <button onClick={() => this.deleteProfile(profile.id)}>Delete Profile</button>
+                    <button onClick={this.routeProfile} className='button'>Edit Profile</button>
+                    <button onClick={() => this.deleteProfile(profile.id)} className='button'>Delete Profile</button>
                 </>
             }
                 

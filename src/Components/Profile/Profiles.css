@@ -1,0 +1,51 @@
+.getProfiles {
+    height: 20%;
+    width: 45%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* background: chartreuse;  */
+    margin: 10px;
+}
+
+.profiles {
+    height: 100vh;
+    width: 95vw;
+    margin-left: 200px;
+    float: right;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile {
+    height: 20vh;
+    width: 20vw;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.each {
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.firstName {
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}
+
+.lastName {
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    margin-left: 8px;
+    text-transform: capitalize;
+}

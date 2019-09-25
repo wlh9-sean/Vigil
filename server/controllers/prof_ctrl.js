@@ -1,9 +1,9 @@
 const create = (req, res) => {
     const db = req.app.get('db')
-    const {first_name, last_name, birthday, passing_date} = req.body
+    const {first_name, last_name, birthday, passing_date, img} = req.body
     const {id} = req.session.user
 
-    db.profile.create_profile({first_name, last_name, birthday, passing_date, id})
+    db.profile.create_profile({first_name, last_name, birthday, passing_date, img, id})
     .then(() => {
         res.status(200).send('Profile Created!')
     })

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import styled from 'styled-components'
+import './Profiles.css'
 
 
 export default class GetProfiles extends Component {
@@ -26,23 +26,25 @@ export default class GetProfiles extends Component {
     render() {
         const mappedProfiles = this.state.profile.map((profile) => {
             return(
-                <Link to={`/api/profile/${profile.id}`}>
-                    <Div>
-                        <div>{profile.first_name}</div>
-                        <div>{profile.last_name}</div>
-                    </Div>
+                <Link to={`/api/profile/${profile.id}`} className='getProfiles'>
+                    <div className='profile'>
+                        <div className='firstName'>{profile.first_name}</div>
+                        <div className='lastName'>{profile.last_name}</div>
+                    </div>
                 </Link>
             )
         })
         return (
-            <div>
-                {mappedProfiles}
+            <div className='profiles'>
+                <section className='each'>
+                    {mappedProfiles}
+                </section>
             </div>
         )
     }
 }
 
 // Styled components
-const Div = styled.div`
-    margin: 10px;
-`
+// const Div = styled.div`
+//     margin: 10px;
+// `

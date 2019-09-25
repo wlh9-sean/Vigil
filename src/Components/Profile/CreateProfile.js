@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './CreateProfile.css'
 
 export default class CreateProfile extends Component {
     constructor(){
@@ -10,6 +11,7 @@ export default class CreateProfile extends Component {
             last_name: '',
             birthday: '',
             passing_date: '',
+            img: '',
             // startDate: new Date()
         }
     }
@@ -27,13 +29,14 @@ export default class CreateProfile extends Component {
     }
 
     create = () => {
-        const {first_name, last_name, birthday, passing_date} = this.state
-        axios.post('/api/profile/create', {first_name, last_name, birthday, passing_date}).then(profile => {
+        const {first_name, last_name, birthday, passing_date, img} = this.state
+        axios.post('/api/profile/create', {first_name, last_name, birthday, passing_date, img}).then(profile => {
             this.setState({
                 first_name: '',
                 last_name: '',
                 birthday: '',
-                passing_date: ''
+                passing_date: '',
+                img:''
             })
             this.props.history.push('/api/profiles')
         }).catch(err => console.log(err)) 
@@ -41,7 +44,7 @@ export default class CreateProfile extends Component {
 
     render() {
         return (
-            <div>
+            <div className='CreateProfile'>
                 <div>
                     <h1>Create a profile</h1>
                     <input type = 'text'
@@ -68,6 +71,12 @@ export default class CreateProfile extends Component {
                         onChange = {this.handleChange}
                         value = {this.state.passing_date}
                     />
+                    <input type='text'
+                        placeholder='Profile Image'
+                        name='img' 
+                        // value={this.state.password}
+                        onChange={this.handleChange} 
+                        />
                     <button onClick={this.create}>Create</button>
 
                 </div>

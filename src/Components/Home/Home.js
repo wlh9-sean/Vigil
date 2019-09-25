@@ -12,23 +12,26 @@ function Home(props) {
             </div>
 
             <div className='introBox'>
-                <h1 className='about'>About Us</h1>
+                <h1 className='about'>Welcome</h1>
                 <p>Occaecat magna deserunt quis proident velit minim cillum reprehenderit fugiat. Sit irure elit labore dolore ullamco enim ullamco nulla. Ut exercitation quis cupidatat ipsum cillum et.</p>
             </div>
             
-            {!props.id ?
-                (<Link to='/admin/register'>
-                    <button className='button'>Register as an Admin</button>
-                </Link>)
-            :
-                (<Link to='/api/profile/create'>
-                    <button className='button'>Create a Profile</button>
-                </Link>)
-            }
+            <div className='buttons'>
+                {!props.id ?
+                    (<Link to='/admin/register'>
+                        <button className='button'>Registration</button>
+                    </Link>)
+                :
+                    (<Link to='/api/profile/create'>
+                        <button className='button'>Create a Profile</button>
+                    </Link>)
+                }
 
-            <Link to='/api/resources'>
-                <button className='button'>Resources</button>
-            </Link>
+                <Link to='/api/resources'>
+                    <button className='button'>Resources</button>
+                </Link>
+
+            </div>
         </div>
     )
 }

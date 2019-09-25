@@ -12,7 +12,8 @@ class Admin extends Component {
             firstName: '',
             lastName: '',
             email: '',
-            password: ''
+            password: '',
+        
         }
     }
 
@@ -30,7 +31,8 @@ class Admin extends Component {
                 firstName: '',
                 lastName: '',
                 email: '',
-                password: ''
+                password: '',
+            
             })
             this.props.updateUser(user.data)
             this.props.history.push('/')

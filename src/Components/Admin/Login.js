@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {updateUser, logoutUser} from './../../redux/reducers/adminReducer'
+import './Login.css'
 
 class Login extends Component {
     constructor(){
@@ -38,7 +39,7 @@ class Login extends Component {
     render() {
         return (
 
-            <div>
+            <div className='login'>
                 <label>Email</label>
                <input type='email'
                     placeholder='Email'

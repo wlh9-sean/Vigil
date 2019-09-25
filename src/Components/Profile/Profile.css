@@ -1,0 +1,44 @@
+.profileContainer {
+    height: 80vh;
+    width: 100vw;
+    margin-left: 15vw;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.individualProfile {
+    height: 100%;
+    width: 50%;
+    /* background: blue; */
+    display: flex;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    padding-top: 10%;
+}
+
+.infoStyling {
+    width: 50%;
+    display: flex;
+    /* justify-content: space-around;   */
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    /* align-content: space-around; */
+}
+
+.nameStyling {
+    width: 100%;
+    /* margin-left: 100px; */
+
+}
+
+.birthdayStyling {
+
+}
+
+.photo {
+    /* background-size: cover; */
+    border-radius: 2.5%;
+    width: 100%;
+}
