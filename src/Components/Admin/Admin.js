@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {updateUser} from './../../redux/reducers/adminReducer'
 import axios from 'axios'
-import styled from 'styled-components'
+// import styled from 'styled-components'
+import './Admin.css'
 
 class Admin extends Component {
     constructor(){
@@ -42,36 +43,40 @@ class Admin extends Component {
 
     render() {
         return (
-            <Div1>
-                <Div2>
-                    <h1>Register</h1>
+            <div className='registerParent'>
+                <div className='box'>
+                    <h1 className='h1'>Register</h1>
                     <input type='text'
                         placeholder='First Name'
                         name='firstName'
                         // value={this.state.firstName}
                         onChange={this.handleChange}
+                        className='input'
                         />
                     <input type='text'
                         placeholder='Last Name'
                         name='lastName' 
                         // value={this.state.lastName}
-                        onChange={this.handleChange} 
+                        onChange={this.handleChange}
+                        className='input' 
                         />
                     <input type='email'
                         placeholder='email'
                         name='email' 
                         // value={this.state.email}
-                        onChange={this.handleChange} 
+                        onChange={this.handleChange}
+                        className='input' 
                         />
                     <input type='password'
                         placeholder='Password'
                         name='password' 
                         // value={this.state.password}
-                        onChange={this.handleChange} 
+                        onChange={this.handleChange}
+                        className='input' 
                         />
-                    <button onClick={this.register}>Continue</button>
-                </Div2>
-            </Div1>
+                    <button onClick={this.register} className='buttonDesktop'>Continue</button>
+                </div>
+            </div>
         )
     }
 }
@@ -81,22 +86,22 @@ export default connect(null, {updateUser}) (Admin)
 
 // Styled Components
 
-const Div1 = styled.div`
-    height: 500px;
-    width: 50%;
-    background: #F6F6F6;
-    margin-top: 50px;
-    margin-left: 270px;
-    display: flex;
+// const Div1 = styled.div`
+//     height: 500px;
+//     width: 50%;
+//     background: #F6F6F6;
+//     margin-top: 50px;
+//     margin-left: 270px;
+//     display: flex;
 
-`
+// `
 
-const Div2 = styled.div`
-    height: 100%;
-    width: 100%;
-    background: #F6F6F6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-`
+// const Div2 = styled.div`
+//     height: 100%;
+//     width: 100%;
+//     background: #F6F6F6;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-around;
+// `

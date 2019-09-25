@@ -52,8 +52,8 @@ class NavBar extends Component {
                                 <li className='listItemDesktop'>Resources</li>
                             </Link>
 
-                            <Link className='linkDesktop'>
-                                <li className='listItemDesktop'>About Us</li>
+                            <Link to='/api/profiles' className='linkDesktop'>
+                                <li className='listItemDesktop'>View Profiles</li>
                             </Link>
                         </ul>
                     

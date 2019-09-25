@@ -45,39 +45,44 @@ export default class CreateProfile extends Component {
     render() {
         return (
             <div className='CreateProfile'>
-                <div>
-                    <h1>Create a profile</h1>
+                <div className='box'>
+                    <h1 className='h1'>Create a profile</h1>
                     <input type = 'text'
                         placeholder = 'First Name'
                         name = 'first_name'
                         onChange={this.handleChange}
                         value={this.state.first_name}
+                        className='input'
                     />
                     <input type = 'text'
                         placeholder = 'Last Name'
                         name = 'last_name'
                         onChange = {this.handleChange}
                         value={this.state.last_name}
+                        className='input'
                     />
                     <input type = 'date'
                         placeholder = 'Birthday'
                         name = 'birthday'
                         onChange = {this.handleChange}
                         value={this.state.birthday}
+                        className='input'
                     />
                     <input type = 'date'
                         placeholder = 'Date Of Passing'
                         name = 'passing_date'
                         onChange = {this.handleChange}
                         value = {this.state.passing_date}
+                        className='input'
                     />
                     <input type='text'
                         placeholder='Profile Image'
                         name='img' 
                         // value={this.state.password}
-                        onChange={this.handleChange} 
+                        onChange={this.handleChange}
+                        className='input' 
                         />
-                    <button onClick={this.create}>Create</button>
+                    <button onClick={this.create} className='buttonDesktop'>Create</button>
 
                 </div>
             </div>

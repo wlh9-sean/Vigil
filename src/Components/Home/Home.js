@@ -13,7 +13,9 @@ function Home(props) {
 
             <div className='introBox'>
                 <h1 className='about'>Welcome</h1>
-                <p>Occaecat magna deserunt quis proident velit minim cillum reprehenderit fugiat. Sit irure elit labore dolore ullamco enim ullamco nulla. Ut exercitation quis cupidatat ipsum cillum et.</p>
+                <p>Vigil Light provides you with resources aiding in the process of memorializing your loved ones. From detailed instructions for the most popular social media platforms, to a personalized profile where you can pay your respects, let Vigil Light help ease the pressure of saying goodbye. 
+                    
+                To get started, click “Registration” below. We will first ask for your information before gathering the information of your loved one. </p>
             </div>
             
             <div className='buttons'>

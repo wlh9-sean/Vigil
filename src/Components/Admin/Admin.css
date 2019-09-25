@@ -1,4 +1,4 @@
-.loginParent {
+.registerParent {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.login {
+.box {
     height: 70vh;
     width: 70vw;
     display: flex;
@@ -16,13 +16,11 @@
     justify-content: space-around
 }
 
-.email {
-    width: 25%;
-    height: 6%;
-    font-size: 1.3em;
+.h1 {
+    font-size: 1.5em;
 }
 
-.password {
+.input {
     width: 25%;
     height: 6%;
     font-size: 1.3em;
