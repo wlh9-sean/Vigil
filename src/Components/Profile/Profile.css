@@ -2,7 +2,7 @@
     height: 80vh;
     width: 100vw;
     margin-left: 15vw;
-    background: white;
+    /* background: white; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -20,6 +20,7 @@
 
 .infoStyling {
     width: 50%;
+    margin-left: 50px;
     display: flex;
     /* justify-content: space-around;   */
     /* flex-wrap: wrap; */
@@ -29,16 +30,28 @@
 
 .nameStyling {
     width: 100%;
-    /* margin-left: 100px; */
+    font-size: 2em;
+    margin-bottom: 5vh;
+    text-transform: capitalize;
 
 }
 
-.birthdayStyling {
-
+.dateStyling {
+    width: 75%;
+    font-size: 1.1em;
 }
 
 .photo {
     /* background-size: cover; */
     border-radius: 2.5%;
     width: 100%;
+}
+
+.profileButtons {
+    /* background: blue; */
+    /* height: 25vh;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; */
 }

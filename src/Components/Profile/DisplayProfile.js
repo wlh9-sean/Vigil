@@ -71,18 +71,21 @@ class DisplayProfile extends Component {
                             <p>{profile.first_name} {profile.last_name}</p>
                         </div>
 
-                        <div className='birthdayStyling'>
+                        <div className='dateStyling'>
                             {profile.birthday}
                         </div>
 
-                        <div className='passingDateStyling'>
+                        <div className='dateStyling'>
                             {profile.passing_date}
                         </div>
                     </div>
                 </div>
                     
-                    <button onClick={this.routeProfile} className='button'>Edit Profile</button>
-                    <button onClick={() => this.deleteProfile(profile.id)} className='button'>Delete Profile</button>
+                    <div className='profileButtons'>
+                        <button onClick={this.routeProfile} className='button'>Edit Profile</button>
+                        <button onClick={() => this.deleteProfile(profile.id)} className='button'>Delete Profile</button>
+
+                    </div>
                 </>
             }
                 
