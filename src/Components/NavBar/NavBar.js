@@ -79,23 +79,28 @@ class NavBar extends Component {
                 :
                 (
                     <div>
-                        <nav className='navbarMobile'>
+                        <nav className={
+                            this.state.menu ?
+                            'navbarMobile slide'
+                            :
+                            'navbarMobile'
+                        }>
                             <img src={arrow} onClick={this.slide} alt='' />
                             <Link to='/' className='linkMobile'>
                                 <h1 className='titleMobile'>Vigil Light</h1>
                             </Link>
 
                             <ul className='listMobile'>
-                                <Link>
-                                    <li>Register</li>
+                                <Link to='/admin/register' className='linkMobile'>
+                                    <li className='listItemMobile'>Register</li>
                                 </Link>
 
-                                <Link>
-                                    <li>Resources</li>
+                                <Link to='/api/resources' className='linkMobile'>
+                                    <li className='listItemMobile'>Resources</li>
                                 </Link>
 
-                                <Link>
-                                    <li>About Us</li>
+                                <Link to='/api/profiles' className='linkMobile'>
+                                    <li className='listItemMobile'>View Profiles</li>
                                 </Link>
                             </ul>
 
