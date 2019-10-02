@@ -28,12 +28,15 @@ class Admin extends Component {
         const {firstName, lastName, email, password, isAdmin} = this.state
         axios.post('/auth/register', {firstName, lastName, email, password, isAdmin})
         .then(user => {
+            axios.post(`/mail/welcome/${email}`).then(() => {
+                console.log('email sent')
+            })
             this.setState({
                 firstName: '',
                 lastName: '',
                 email: '',
                 password: '',
-            
+                
             })
             this.props.updateUser(user.data)
             this.props.history.push('/')

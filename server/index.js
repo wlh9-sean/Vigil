@@ -8,6 +8,7 @@ const chalk = require('chalk')
 const authCtrl = require('./controllers/auth_ctrl')
 const profCtrl = require('./controllers/prof_ctrl')
 const authMidd = require('./middleware/auth_middlware')
+const mailCtrl = require('./controllers/mail_ctrl')
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
@@ -35,6 +36,7 @@ massive(CONNECTION_STRING).then(db => {
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', authCtrl.logout)
+app.post('/mail/welcome/:email', mailCtrl.sendEmail)
 
 // Profile Endpoints POST create PUT update GET read DELETE delete
 app.post('/api/profile/create', authMidd.authenticateUser, profCtrl.create)
